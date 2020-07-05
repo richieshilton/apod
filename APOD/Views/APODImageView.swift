@@ -43,10 +43,5 @@ struct APODImageView: View {
                     .font(.title)
             }.padding()
         }
-        .onTapGesture {
-            if apod.isVideo {
-                
-            }
-        }
     }
 }

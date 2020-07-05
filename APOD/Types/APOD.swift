@@ -11,6 +11,7 @@ struct APOD: Codable {
     let url: String
     let title: String
     let explanation: String
+    let date: String
     
     var isVideo: Bool {
         return url.contains("youtube")

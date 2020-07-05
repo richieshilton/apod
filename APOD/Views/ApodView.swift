@@ -19,7 +19,7 @@ struct ApodView: View {
                         APODImageView(apod: apod)
                             .frame(height: 300)
                         
-                        Text(apod.explanation)
+                        Text("\(apod.explanation)\nDate: \(apod.date)")
                             .font(.caption)
                             .padding()
                     }
