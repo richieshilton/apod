@@ -21,8 +21,17 @@ class ApodViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     init() {
+            
+        let willEnterForeground = NotificationCenter.default
+            .publisher(for: UIApplication.willEnterForegroundNotification)
+            .map { _ in () }
+            .prepend(())
         
-        $date
+        let update = $date
+            .combineLatest(willEnterForeground)
+            .map { $0.0 }
+            
+        update
             .flatMap {
                 API.getAPOD(from: $0)
                     .catch { error -> Empty<APOD, Never> in
@@ -31,6 +40,7 @@ class ApodViewModel: ObservableObject {
                     }
             }
             .compactMap { $0 }
+            .removeDuplicates()
             .assign(to: \.apod, on: self)
             .store(in: &cancellables)
     }
