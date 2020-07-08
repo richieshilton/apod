@@ -24,7 +24,7 @@ class ApodViewModel: ObservableObject {
             
         let willEnterForeground = NotificationCenter.default
             .publisher(for: UIApplication.willEnterForegroundNotification)
-            .map { _ in () }
+            .mapToVoid()
             .prepend(())
         
         let update = $date
@@ -34,10 +34,7 @@ class ApodViewModel: ObservableObject {
         update
             .flatMap {
                 API.getAPOD(from: $0)
-                    .catch { error -> Empty<APOD, Never> in
-                        self.error = error
-                        return Empty(completeImmediately: false)
-                    }
+                    .trackErrors(to: \.error, on: self)
             }
             .compactMap { $0 }
             .removeDuplicates()

@@ -36,8 +36,7 @@ class RemoteImageModel: ObservableObject {
         guard let url = imageUrl else {
             return
         }
-        
-        let imageURL = URL(string: url)!
+                let imageURL = URL(string: url)!
         
         URLSession.shared.dataTask(with: imageURL, completionHandler: { (data, response, error) in
             if let data = data {
