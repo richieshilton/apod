@@ -31,7 +31,7 @@ class API {
                 return data
             }
             .decode(type: APOD.self, decoder: JSONDecoder())
-            .receive(on: RunLoop.main)
+            .receiveOnMain()
             .eraseToAnyPublisher()
     }
 }

@@ -17,6 +17,7 @@
 		5D18A2E824B039F000F8A47F /* APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D18A2E724B039F000F8A47F /* APOD.swift */; };
 		5D18A2EA24B03AEB00F8A47F /* ApodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D18A2E924B03AEB00F8A47F /* ApodViewModel.swift */; };
 		5D45541D24B5AC000020AF09 /* Publisher+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D45541C24B5AC000020AF09 /* Publisher+Extended.swift */; };
+		5D8BBC9D24B6FE9A007E4F76 /* Publishers+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8BBC9C24B6FE9A007E4F76 /* Publishers+Extended.swift */; };
 		5D9FA95F24B054EB00262248 /* ServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9FA95E24B054EB00262248 /* ServiceErrors.swift */; };
 		5DD2A9B424B14D620067192E /* CachedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD2A9B324B14D620067192E /* CachedImage.swift */; };
 		5DD2A9B824B14DA50067192E /* UIImage+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD2A9B724B14DA50067192E /* UIImage+Extended.swift */; };
@@ -37,6 +38,7 @@
 		5D18A2E724B039F000F8A47F /* APOD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD.swift; sourceTree = "<group>"; };
 		5D18A2E924B03AEB00F8A47F /* ApodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodViewModel.swift; sourceTree = "<group>"; };
 		5D45541C24B5AC000020AF09 /* Publisher+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Extended.swift"; sourceTree = "<group>"; };
+		5D8BBC9C24B6FE9A007E4F76 /* Publishers+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publishers+Extended.swift"; sourceTree = "<group>"; };
 		5D9FA95E24B054EB00262248 /* ServiceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceErrors.swift; sourceTree = "<group>"; };
 		5DD2A9B324B14D620067192E /* CachedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImage.swift; sourceTree = "<group>"; };
 		5DD2A9B724B14DA50067192E /* UIImage+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extended.swift"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				5D45541C24B5AC000020AF09 /* Publisher+Extended.swift */,
+				5D8BBC9C24B6FE9A007E4F76 /* Publishers+Extended.swift */,
 			);
 			path = Combine;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D18A2D424B0300F00F8A47F /* ApodView.swift in Sources */,
+				5D8BBC9D24B6FE9A007E4F76 /* Publishers+Extended.swift in Sources */,
 				5D18A2E824B039F000F8A47F /* APOD.swift in Sources */,
 				5D18A2E124B0306B00F8A47F /* RemoteImageModel.swift in Sources */,
 				5D45541D24B5AC000020AF09 /* Publisher+Extended.swift in Sources */,

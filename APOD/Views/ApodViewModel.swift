@@ -27,14 +27,15 @@ class ApodViewModel: ObservableObject {
             .mapToVoid()
             .prepend(())
         
-        let update = $date
-            .combineLatest(willEnterForeground)
-            .map { $0.0 }
+        
+        let update = Publishers
+            .combineLatest($date, willEnterForeground) { (date, _) in date }
+            
             
         update
             .flatMap {
                 API.getAPOD(from: $0)
-                    .trackErrors(to: \.error, on: self)
+                    .assignErrors(to: \.error, on: self)
             }
             .removeDuplicates()
             .assign(to: \.apod, on: self)
