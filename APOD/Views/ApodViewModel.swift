@@ -36,7 +36,6 @@ class ApodViewModel: ObservableObject {
                 API.getAPOD(from: $0)
                     .trackErrors(to: \.error, on: self)
             }
-            .compactMap { $0 }
             .removeDuplicates()
             .assign(to: \.apod, on: self)
             .store(in: &cancellables)
