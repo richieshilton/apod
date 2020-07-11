@@ -41,6 +41,7 @@ struct APODImageView: View {
                 Spacer()
                 Text(apod.title)
                     .font(.title)
+                    .foregroundColor(.white)
             }.padding()
         }
     }

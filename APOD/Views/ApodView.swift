@@ -34,12 +34,12 @@ struct ApodView: View {
             }.layoutPriority(1)
             
             HStack {
-                DatePicker(selection: $viewModel.date, in: ...Date(), displayedComponents: .date) {
+                DatePicker(selection: $viewModel.date, in: ...Date.utc, displayedComponents: .date) {
                     Text("Select a date:")
                 }
-                Button("today") {
-                    viewModel.date = Date()
-                }.foregroundColor(.white)
+                Button("latest") {
+                    viewModel.date = .utc
+                }
             }
             .padding()
         }

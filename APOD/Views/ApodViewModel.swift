@@ -12,7 +12,7 @@ import SwiftUI
 class ApodViewModel: ObservableObject {
     
     // State
-    @Published var date: Date = Date()
+    @Published var date: Date = .utc
     
     // Outputs
     @Published var apod: APOD?
@@ -34,7 +34,7 @@ class ApodViewModel: ObservableObject {
             
         update
             .flatMap {
-                API.getAPOD(from: $0)
+                API().getAPOD(from: $0)
                     .assignErrors(to: \.error, on: self)
             }
             .removeDuplicates()
