@@ -12,7 +12,7 @@ import SwiftUI
 class ApodViewModel: ObservableObject {
     
     // State
-    @Published var date: Date = .utc
+    @Published var date: Date = .est
     
     // Outputs
     @Published var apod: APOD?

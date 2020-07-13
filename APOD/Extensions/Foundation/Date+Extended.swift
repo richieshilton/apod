@@ -9,10 +9,10 @@ import Foundation
 
 extension Date {
     
-    // Date in UTC/GMT
-    static var utc: Date {
-        let date = Date()
-        let seconds = TimeInterval(TimeZone.current.secondsFromGMT(for: date))
-        return Date(timeInterval: -seconds, since: date)
+    // Date in EST time
+    static var est: Date {
+        let localDiff = TimeZone.current.secondsFromGMT()
+        let estDiff = TimeZone(abbreviation: "EST")?.secondsFromGMT() ?? (5 * 60 * 60)
+        return Date(timeInterval: TimeInterval(estDiff - localDiff), since: Date())
     }
 }

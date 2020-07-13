@@ -34,6 +34,15 @@ extension Publisher {
     public func receiveOnMain() -> Publishers.ReceiveOn<Self, RunLoop> {
         receive(on: RunLoop.main)
     }
+    
+    public func withLatestFrom<P>(_ other: P) -> AnyPublisher<(Self.Output, P.Output), Self.Failure> where P: Publisher, Self.Output: Equatable, Self.Failure == P.Failure {
+        
+        return flatMap { first in
+            other.map { second in
+                return (first, second)
+            }
+        }.eraseToAnyPublisher()
+    }
 }
 
 extension Publisher where Self.Failure == Never {
